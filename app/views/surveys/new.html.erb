@@ -1,0 +1,34 @@
+<h1>Post-HOA Meeting Survey</h1>
+
+<div class="container">
+    <%= form_with model: @survey, url: surveys_path, method: :post, local: true do |f| %>
+    <div class="form-group">
+        <%= f.label :name, "Name:" %>
+        <%= f.text_field :name, required: true %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :address, "Address:" %>
+        <%= f.text_field :address, required: true %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :role, "Current Role:" %>
+        <%= f.select :role, [["Board Member", "board_member"], ["Home Owner", "home_owner"], ["Renter", "renter"]], prompt: "Select your role", required: true %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :meeting_feel, "Feel of the Meeting:" %><br>
+        <%= f.radio_button :meeting_feel, "productive" %> Productive<br>
+        <%= f.radio_button :meeting_feel, "neutral", checked: true %> Neutral<br>
+        <%= f.radio_button :meeting_feel, "unproductive" %> Unproductive
+    </div>
+
+    <div class="form-group">
+        <%= f.label :comments, "Additional Comments:" %>
+        <%= f.text_area :comments, rows: 4, placeholder: "Your comments..." %>
+    </div>
+
+    <%= f.submit "Submit Survey", class: "button" %>
+    <% end %>
+</div>
