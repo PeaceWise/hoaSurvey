@@ -17,6 +17,17 @@
   </head>
 
   <body>
+   <!-- Navigation Bar -->
+    <nav>
+      <ul>
+        <li><%= link_to 'Home', home_index_path %></li>
+        <li><%= link_to 'New', new_survey_path %></li>
+        <li><%= link_to 'Surveys', surveys_path %></li>
+      </ul>
+    </nav>
+  <!-- Navigation Bar -->
+
+
     <%= yield %>
   </body>
 </html>

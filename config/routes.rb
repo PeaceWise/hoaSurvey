@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "home/index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   
   # Add surveys resource with only new and create actions
@@ -14,9 +15,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   
+  root 'home#index'
+
   # This sets the homepage to /surveys/new
   # root "surveys#new"
 
   # This redirects the homepage to /surveys/new
-  root to: redirect('/surveys/new')
+  # root to: redirect('/surveys/new')
 end
