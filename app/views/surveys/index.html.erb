@@ -1,26 +1,28 @@
 <h1>Survey Submissions</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Address</th>
-      <th>Role</th>
-      <th>Meeting Feel</th>
-      <th>Comments</th>
-      <th>Submitted At</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @surveys.each do |survey| %>
-      <tr>
-        <td><%= survey.name %></td>
-        <td><%= survey.address %></td>
-        <td><%= survey.role %></td>
-        <td><%= survey.meeting_feel %></td>
-        <td><%= survey.comments %></td>
-        <td><%= survey.created_at %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="container">
+    <table class="survey-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Address</th>
+          <th>Role</th>
+          <th>Meeting Feel</th>
+          <th>Comments</th>
+          <th>Submitted At</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @surveys.each do |survey| %>
+          <tr>
+            <td><%= survey.name %></td>
+            <td><%= survey.address %></td>
+            <td><%= survey.role %></td>
+            <td><%= survey.meeting_feel %></td>
+            <td><%= survey.comments %></td>
+            <td><%= survey.created_at %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+</div>
