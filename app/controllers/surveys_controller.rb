@@ -19,6 +19,14 @@ class SurveysController < ApplicationController
     @surveys = Survey.all
   end
   
+#This is for the viewing page for all of the survey submissions.  
+  def statistics
+    @productive_count = Survey.where(meeting_feel: "productive").count
+    @neutral_count = Survey.where(meeting_feel: "neutral").count
+    @unproductive_count = Survey.where(meeting_feel: "unproductive").count
+    @total_surveys = Survey.count
+  end
+#This is for the viewing page for all of the survey submissions.
 
 
   private
