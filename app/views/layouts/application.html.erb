@@ -18,16 +18,50 @@
 
   <body>
    <!-- Navigation Bar -->
-    <nav>
-      <ul>
-        <li><%= link_to 'Home', home_index_path %></li>
+   
+   
+    <!-- Original 
+     <ul class="left-nav">
+       <li><%= link_to 'Home', home_index_path %></li>
+       <li><%= link_to 'New', new_survey_path %></li>
+       <li><%= link_to 'Surveys', surveys_path %></li>
+     </ul>
+      Original  -->
+
+
+
+      <nav>
+      <ul class="left-nav">
+      <li><%= link_to 'Home', home_index_path %></li>
+      <% if user_signed_in? %>
         <li><%= link_to 'New', new_survey_path %></li>
         <li><%= link_to 'Surveys', surveys_path %></li>
-      </ul>
-    </nav>
+      <% end %>
+    </ul>
+     
+     <ul class="right-nav">
+       <% if user_signed_in? %>
+         <li class="dropdown">
+           <a href="#" class="dropbtn">Welcome, <%= current_user.email %></a>
+           <div class="dropdown-content">
+             <%= link_to 'Edit profile', edit_user_registration_path %>
+             <%= button_to 'Sign out', destroy_user_session_path, method: :delete %>
+           </div>
+         </li>
+       <% else %>
+         <li><%= link_to 'Sign up', new_user_registration_path %></li>
+         <li><%= link_to 'Sign in', new_user_session_path %></li>
+       <% end %>
+     </ul>
+   </nav>
+   
   <!-- Navigation Bar -->
 
 
     <%= yield %>
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
   </body>
 </html>

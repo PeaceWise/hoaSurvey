@@ -1,5 +1,8 @@
 class SurveysController < ApplicationController
 
+#This is to restrict (Works)
+before_action :authenticate_user!, only: [:new, :index]
+
  #This is for the new survey form
   def new
     @survey = Survey.new
