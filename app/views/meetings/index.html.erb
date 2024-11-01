@@ -1,0 +1,15 @@
+<h1>Meeting History</h1>
+
+
+
+<div class="container meetings">
+    <% @meetings.each do |meeting| %>
+    <div class="meeting">
+        <h2><%= meeting.topic %></h2>
+        <p><strong>Date:</strong> <%= meeting.date.strftime('%B %d, %Y') %></p>
+        <p><strong>Description:</strong> <%= meeting.description %></p>
+    </div>
+    <% end %>
+
+    <%= paginate @meetings %>
+</div>

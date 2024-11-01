@@ -1,0 +1,24 @@
+<h1>New Meeting</h1>
+
+<div class="container create-meetings">
+    <%= form_with model: @meeting, local: true do |form| %>
+    <div>
+        <%= form.label :date %>
+        <%= form.date_select :date %>
+    </div>
+
+    <div>
+        <%= form.label :topic %>
+        <%= form.text_field :topic %>
+    </div>
+
+    <div>
+        <%= form.label :description %>
+        <%= form.text_area :description %>
+    </div>
+
+    <div>
+        <%= form.submit 'Create Meeting' %>
+    </div>
+    <% end %>
+</div>

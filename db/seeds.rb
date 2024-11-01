@@ -7,3 +7,13 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+10.times do |i|
+    date = Meeting.second_tuesday(2024, i + 1)
+    Meeting.create(
+      date: date,
+      topic: "HOA Meeting #{i + 1}",
+      description: "Discussion on various topics for #{date.strftime('%B %Y')}."
+    )
+  end
+  

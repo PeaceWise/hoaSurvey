@@ -19,100 +19,99 @@
   
 
 /* navBar */
-nav {
-  display: flex;
-  justify-content: space-between; /* Align left and right navs on the same bar */
-  background-color: #333;
-  padding: 0;
-}
+  nav {
+    display: flex;
+    justify-content: space-between; /* Align left and right navs on the same bar */
+    background-color: #333;
+    padding: 0;
+    border-radius: 5px;
+  }
 
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex; /* Ensures links are aligned horizontally */
-}
+  .welcome {
+    border-radius: 5px;
+  }
 
-nav ul.left-nav {
-  justify-content: flex-start;
-}
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Ensures links are aligned horizontally */
+  }
 
-nav ul.right-nav {
-  justify-content: flex-end;
-}
+  nav ul.left-nav {
+    justify-content: flex-start;
+  }
 
-nav ul li {
-  display: inline; /* Ensure the items are aligned in a row */
-}
+  nav ul.right-nav {
+    justify-content: flex-end;
+  }
 
-nav ul li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
+  nav ul li {
+    display: inline; /* Ensure the items are aligned in a row */
+  }
 
-nav ul li a:hover {
-  background-color: #111;
-}
+  nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
 
-/* Dropdown container */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
+  nav ul li a:hover {
+    background-color: #111;
+    border-radius: 5px;
+  }
 
-/* Dropdown button */
-.dropbtn {
-  background-color: #333;
-  color: white;
-  padding: 14px 16px;
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-}
+  /* Dropdown container */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
 
-/* Dropdown content (hidden by default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #333;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
+  /* Dropdown button */
+  .dropbtn {
+    background-color: #333;
+    color: white;
+    padding: 14px 16px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+  }
 
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: white;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
+  /* Dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
 
-.dropdown-content a:hover {
-  background-color: #111;
-}
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
 
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
+  .dropdown-content a:hover {
+    background-color: #111;
+  }
 
-.dropdown:hover .dropbtn {
-  background-color: #111;
-}
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown:hover .dropbtn {
+    background-color: #111;
+  }
+
 /* navBar */
-
-
-
-
-
-
-
-
 
 
 
@@ -120,13 +119,17 @@ nav ul li a:hover {
  .homepage-container {
     background-image: url('/assets/sunriseCityHall.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: bottom;
     height: 100vh; /* Full viewport height */
     display: flex;
     justify-content: center;
     align-items: center;
   }
   
+  body {
+    overflow: hidden;
+  }
+
   .content {
     text-align: center;
     background-color: rgba(255, 255, 255, 0.8); /* Optional: semi-transparent background for readability */
@@ -135,10 +138,66 @@ nav ul li a:hover {
   }
   
   .centered-image {
-    max-width: 450px; /* Adjust size of the small image */
+    max-width: 100%; /* Adjust size of the small image */
     margin-top: 10px;
     border-radius: 10px;
   }
   
 
  /* homePage */
+
+
+
+
+
+
+/* Pagination Styles */
+.pagination {
+  display: flex;
+  list-style: none;
+  padding: 10px; /* Add padding around the pagination */
+  justify-content: center;
+  background-color: #f8f9fa; /* Light background to help it stand out */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  gap: 20px;
+}
+
+.pagination .page-item {
+  margin: 0 50px; /* Increased margin for better spacing */
+}
+
+.pagination .page-item a {
+  text-decoration: none;
+  padding: 10px 15px; /* Larger padding for a better click area */
+  background-color: #007bff; /* Primary button color */
+  color: white; /* Text color */
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transition effects */
+  border: 1px solid transparent; /* Border for better visibility */
+}
+
+.pagination .page-item a:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+  transform: scale(1.05); /* Slight scaling effect */
+  border: 1px solid #004085; /* Border on hover for definition */
+}
+
+.pagination .page-item.active a {
+  background-color: #0056b3; /* Color for active page */
+  pointer-events: none; /* Prevent interaction on active item */
+}
+
+.pagination .page-item.disabled span {
+  color: #6c757d; /* Gray color for disabled state */
+  pointer-events: none; /* Prevent interaction */
+}
+
+/* Additional style for better aesthetics */
+.pagination .page-item a,
+.pagination .page-item span {
+  font-family: 'Arial', sans-serif; /* Change font family for better appearance */
+  font-size: 16px; /* Adjust font size for better visibility */
+  line-height: 1.5; /* Improve readability */
+}
+/* Pagination Styles */
